@@ -23,14 +23,11 @@ def get_user(db: orm.Session, user_id: int):
 
 
 # Creators
-def create_game(db: orm.Session, user_id: int, number: str):
+def create_game(db: orm.Session, game: schemas.NewGame):
     pk = uuid.uuid4()
-    db_game = model.Game(
-        id=str(pk),
-        user_id=user_id,
-        number=number
-    )
-    db.add(db_game).commit()
+    db_game = model.Game(id=str(pk), **game.dict())
+    db.add(db_game)
+    db.commit()
     db.refresh(db_game)
     return db_game
 
