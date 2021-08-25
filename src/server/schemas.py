@@ -12,7 +12,8 @@ class GameBase(BaseModel):
 
 
 class NewGame(GameBase):
-    pass
+    user_id: int
+    number: str
 
 
 class Game(GameBase):
