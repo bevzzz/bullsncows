@@ -1,5 +1,4 @@
 # Third-party libraries
-import uuid
 import sqlalchemy.orm as orm
 from sqlalchemy import Column, String, Integer, Boolean, ForeignKey
 
@@ -20,6 +19,7 @@ class Game(Base):
 
     id = Column(String, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("user.id"), index=True)
+    number = Column(String)
     is_active = Column(Boolean, default=True)
 
     user = orm.relationship("User", back_populates="games")
