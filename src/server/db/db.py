@@ -3,7 +3,7 @@ import sqlalchemy as sql
 import sqlalchemy.orm as orm
 from sqlalchemy.ext.declarative import declarative_base
 
-SQLALCHEMY_DATABASE_URL = "sqllite:///./bullcow.db"
+SQLALCHEMY_DATABASE_URL = "sqlite:///./bullcow.db"
 
 engine = sql.create_engine(
     url=SQLALCHEMY_DATABASE_URL,
