@@ -1,12 +1,20 @@
 # Third-party libraries
 import uuid
 import sqlalchemy.orm as orm
+from pydantic import BaseModel
 
 # Local libraries
 # Schemas are Pydantic models
 from src.server import schemas
 # Models are SqlAlchemy ORM models
 from src.server.db import model
+
+
+def add_commit_refresh(db: orm.Session, data: BaseModel):
+    db.add(data)
+    db.commit()
+    db.refresh(data)
+    return data
 
 
 # Readers
@@ -26,15 +34,10 @@ def get_user(db: orm.Session, user_id: int):
 def create_game(db: orm.Session, game: schemas.NewGame):
     pk = uuid.uuid4()
     db_game = model.Game(id=str(pk), **game.dict())
-    db.add(db_game)
-    db.commit()
-    db.refresh(db_game)
-    return db_game
+    return add_commit_refresh(db, db_game)
 
 
 def create_user(db: orm.Session, user: schemas.NewUser):
     db_user = model.User(**user.dict())
-    db.add(db_user).commit()
-    db.refresh(db_user)
-    return db_user
+    return add_commit_refresh(db, db_user)
 
