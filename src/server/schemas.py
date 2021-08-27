@@ -1,6 +1,5 @@
 # Built-in libraries
 import uuid
-from typing import List, Optional
 
 # Third-party libraries
 from pydantic import BaseModel
