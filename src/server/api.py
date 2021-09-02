@@ -4,8 +4,7 @@ from typing import Optional
 # Third-party libraries
 import uuid
 import sqlalchemy.orm as orm
-from fastapi import FastAPI, Header, Depends
-from pydantic import BaseModel
+from fastapi import FastAPI, Header, Body, Depends
 
 # Local libraries
 import src.server.headers as headers
@@ -45,3 +44,9 @@ def new_game(user_id: int, authorization: Optional[str] = Header(None), db: orm.
     game_id = uuid.UUID(game.id)
     return {"id": game_id}
 
+
+@app.get("/game/guess/{game_id}", response_model=schemas.Score)
+def get_score(game_id: uuid.UUID, number: str = Body(..., embed=True), db: orm.Session = Depends(get_db)):
+    game = crud.get_game(db, game_id)
+    score = computer.get_score(game, number)
+    return score

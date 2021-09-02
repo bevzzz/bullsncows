@@ -41,3 +41,7 @@ class User(UserBase):
         orm_mode = True
 
 
+# Score
+class Score(BaseModel):
+    bulls: int = 0
+    cows: int = 0
