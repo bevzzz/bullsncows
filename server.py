@@ -2,7 +2,7 @@
 import uvicorn
 
 # Local libraries
-from src.server.api import app
+from src.server.app.api import app
 
 
 if __name__ == "__main__":

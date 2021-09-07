@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 # Local libraries
 # Schemas are Pydantic models
-from src.server import schemas
+from src.server.app import schemas
 # Models are SqlAlchemy ORM models
 from src.server.db import model
 

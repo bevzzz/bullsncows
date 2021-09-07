@@ -7,8 +7,8 @@ import sqlalchemy.orm as orm
 from fastapi import FastAPI, Header, Body, Depends
 
 # Local libraries
-import src.server.headers as headers
-from src.server import schemas
+import src.server.app.headers as headers
+from src.server.app import schemas
 from src.server.db import crud, model
 from src.server.db.db import SessionLocal, engine
 from src.server.player import Player, MODE

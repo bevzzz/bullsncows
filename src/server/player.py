@@ -8,7 +8,7 @@ import uuid
 
 # Local libraries
 from src.server.db import model
-from src.server.schemas import Score
+from src.server.app.schemas import Score
 
 
 class MODE(int, enum.Enum):
