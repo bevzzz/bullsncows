@@ -45,4 +45,4 @@ class User(UserBase):
 class Score(BaseModel):
     bulls: int = 0
     cows: int = 0
-    is_active = True
+    finished = False

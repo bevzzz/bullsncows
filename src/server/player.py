@@ -29,8 +29,14 @@ class Player:
         s = [str(n) for n in nums]
         return "".join(s)
 
+    def get_score(self, game: model.Game, number: str) -> Score:
+        score = self._count_matches(game, number)
+        if score.bulls == 4:
+            score.finished = True
+        return score
+
     @staticmethod
-    def get_score(game: model.Game, number: str):
+    def _count_matches(game: model.Game, number: str) -> Score:
         target = game.number
         score = Score()
         for n in number:
@@ -41,5 +47,3 @@ class Player:
                 else:
                     score.cows += 1
         return score
-
-

@@ -64,4 +64,7 @@ def get_score(game_id: uuid.UUID, number: str = Body(..., embed=True), db: orm.S
 
     game = crud.get_game(db, game_id)
     score = computer.get_score(game, number)
+    if score.finished:
+        game.is_active = False
+        crud.update_status(db, game.id, game)
     return score
