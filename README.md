@@ -6,6 +6,8 @@ I plan to use this as an educational project and implement a number of front-end
 - Django app
 - ???
 
+[![codecov](https://codecov.io/gh/bevzzz/bullsncows/branch/master/graph/badge.svg?token=MXKN1FOWL9)](https://codecov.io/gh/bevzzz/bullsncows)
+
 ## Rules
 The rules are simple:
 1. There are 2 players: **the Computer** and the **Person**
