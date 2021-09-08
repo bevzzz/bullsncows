@@ -1,12 +1,11 @@
 # bullsncows
+[![codecov](https://codecov.io/gh/bevzzz/bullsncows/branch/master/graph/badge.svg?token=MXKN1FOWL9)](https://codecov.io/gh/bevzzz/bullsncows)
 
 This project is a service that will play the game of "Bulls and Cows" with you.  
 I plan to use this as an educational project and implement a number of front-end solutions for it:
 - Telegram bot
 - Django app
 - ???
-
-[![codecov](https://codecov.io/gh/bevzzz/bullsncows/branch/master/graph/badge.svg?token=MXKN1FOWL9)](https://codecov.io/gh/bevzzz/bullsncows)
 
 ## Rules
 The rules are simple:
