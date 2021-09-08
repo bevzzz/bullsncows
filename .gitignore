@@ -110,7 +110,8 @@ fabric.properties
 # Byte-compiled / optimized / DLL files
 __pycache__/
 
-# End of https://www.toptal.com/developers/gitignore/api/pycharm
-
 # Database
 bullcow.db
+
+# Code coverage
+.coverage
