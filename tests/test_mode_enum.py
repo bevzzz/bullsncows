@@ -4,7 +4,7 @@ from src.server.player import MODE
 
 class TestModeEnum(unittest.TestCase):
     """
-    `Player` has several mode defined in a dedicated enum
+    `Player` has several modes defined in a dedicated enum
     We test that the assigned values are not confused
     """
 
@@ -13,4 +13,4 @@ class TestModeEnum(unittest.TestCase):
         cls.enum = MODE
 
     def test_enums_are_correct(self):
-        self.assertEquals(self.enum.generate, 1)
+        self.assertEqual(self.enum.generate, 1)
