@@ -1,6 +1,6 @@
 # bullsncows
 
-This project is a service that will play the game of "Bulls and Cows" with you.
+This project is a service that will play the game of "Bulls and Cows" with you.  
 I plan to use this as an educational project and implement a number of front-end solutions for it:
 - Telegram bot
 - Django app
