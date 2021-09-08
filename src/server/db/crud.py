@@ -41,3 +41,14 @@ def create_user(db: orm.Session, user: schemas.NewUser):
     db_user = model.User(**user.dict())
     return add_commit_refresh(db, db_user)
 
+
+# Updaters
+def update_game(db: orm.Session, game_id: uuid.UUID, upd: Dict):
+    db.query(model.Game).filter(model.Game.id == game_id).update(upd)
+    db.commit()
+    return None
+
+
+def update_status(db: orm.Session, game_id: uuid.UUID, game: model.Game):
+    return update_game(db, game_id, {model.Game.is_active: game.is_active})
+
