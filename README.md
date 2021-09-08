@@ -1,6 +1,10 @@
 # bullsncows
 
-This project is a Telegram bot that will play the game of "Bulls and Cows" with you.
+This project is a service that will play the game of "Bulls and Cows" with you.
+I plan to use this as an educational project and implement a number of front-end solutions for it:
+- Telegram bot
+- Django app
+- ???
 
 ## Rules
 The rules are simple:
@@ -19,13 +23,14 @@ For example, the generated number is `4367`
 
 The game ends when the Person's number yields 4 bulls (thus guessing the generated number).
 
-# REST API
+## REST API
 **Host:** localhost:8000  
 **Connection-type:** HTTP  
 
 ### Endpoints
 The following endpoints are currently defined:
-- `/game/new/{user_id}` -> start a new game
+- `/game/new/{user_id}` -> start a new game. Generates a new number, adds an entry in the DB and returns the ID of the game.
+- `/game/guess/{game_id}` -> guess the number in an existing game. Returns a count of bulls and cows in the received number.
 
 ### Swagger
 Thanks to [FastAPI](https://fastapi.tiangolo.com/) library, Swagger documentation is conveniently available at `localhost:8000/docs`
