@@ -63,6 +63,12 @@ def get_score(game_id: uuid.UUID, number: str = Body(..., embed=True), db: orm.S
     """
 
     game = crud.get_game(db, game_id)
+    if not game.is_active:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="The game is no longer active"
+        )
+
     score = computer.get_score(game, number)
     if score.finished:
         game.is_active = False
