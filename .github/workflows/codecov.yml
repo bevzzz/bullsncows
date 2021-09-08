@@ -22,5 +22,3 @@ jobs:
       with:
         flags: unittests
         fail_ci_if_error: true
-  ignore:
-    /home/dmytro/pycharm/bullsncows/venv/
