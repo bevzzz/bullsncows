@@ -1,6 +1,7 @@
 # Third-party libraries
 import uuid
 import sqlalchemy.orm as orm
+from typing import List, Dict
 from pydantic import BaseModel
 
 # Local libraries
@@ -18,15 +19,15 @@ def add_commit_refresh(db: orm.Session, data: BaseModel):
 
 
 # Readers
-def get_game(db: orm.Session, game_id: uuid.UUID):
+def get_game(db: orm.Session, game_id: uuid.UUID) -> model.Game:
     return db.query(model.Game).filter(model.Game.id == str(game_id)).first()
 
 
-def get_games(db: orm.Session, skip: int = 0, limit: int = 10):
+def get_games(db: orm.Session, skip: int = 0, limit: int = 10) -> List[model.Game]:
     return db.query(model.Game).offset(skip).limit(limit).all()
 
 
-def get_user(db: orm.Session, user_id: int):
+def get_user(db: orm.Session, user_id: int) -> model.User:
     return db.query(model.User).filter(model.User.id == user_id).first()
 
 
