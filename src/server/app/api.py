@@ -4,7 +4,7 @@ from typing import Optional
 # Third-party libraries
 import uuid
 import sqlalchemy.orm as orm
-from fastapi import FastAPI, Header, Body, Depends
+from fastapi import FastAPI, Header, Body, Depends, status, HTTPException
 
 # Local libraries
 import src.server.app.headers as headers
@@ -30,8 +30,15 @@ def get_db():
         db.close()
 
 
-@app.post("/game/new/{user_id}")
+@app.post("/game/new/{user_id}", status_code=status.HTTP_201_CREATED)
 def new_game(user_id: int, authorization: Optional[str] = Header(None), db: orm.Session = Depends(get_db)):
+    """
+    Start a new game
+    :param user_id: internal user ID
+    :param authorization: user credentials (for a new entry in the database)
+    :param db: database session
+    :return: an ID of the game
+    """
 
     if not crud.get_user(db=db, user_id=user_id):
         username, pw = headers.parse_auth(authorization)
@@ -45,8 +52,16 @@ def new_game(user_id: int, authorization: Optional[str] = Header(None), db: orm.
     return {"id": game_id}
 
 
-@app.get("/game/guess/{game_id}", response_model=schemas.Score)
+@app.get("/game/guess/{game_id}", response_model=schemas.Score, status_code=status.HTTP_200_OK)
 def get_score(game_id: uuid.UUID, number: str = Body(..., embed=True), db: orm.Session = Depends(get_db)):
+    """
+    Make a guess at the number
+    :param game_id: the game being played
+    :param number: user's guess
+    :param db: database session
+    :return: bulls and cows count and the game's status (active or not)
+    """
+
     game = crud.get_game(db, game_id)
     score = computer.get_score(game, number)
     return score
