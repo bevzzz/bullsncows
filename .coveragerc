@@ -1,0 +1,14 @@
+# .coveragerc configuration file to control the execution of test coverage analysis
+
+[run]
+ source =
+    # Only include packages in the project source directory
+    src/
+
+omit =
+    # Do not test site-packages and any other code in the virtual environment
+    venv/*
+
+    # Do not check coverage in package `__init__` files -- those are empty
+    */__init__.py
+cover_pylib = false
