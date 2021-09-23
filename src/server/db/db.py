@@ -17,3 +17,11 @@ SessionLocal = orm.sessionmaker(
 )
 
 Base = declarative_base()
+
+
+def start_new_db_session():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
