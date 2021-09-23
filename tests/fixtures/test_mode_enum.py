@@ -5,7 +5,7 @@ from src.server.player import MODE
 class TestModeEnum(unittest.TestCase):
     """
     `Player` has several modes defined in a dedicated enum
-    We test that the assigned values are not confused
+    Test that the assigned values are not confused
     """
 
     @classmethod
