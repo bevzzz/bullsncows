@@ -113,5 +113,8 @@ __pycache__/
 # Database
 bullcow.db
 
-# Code coverage
+# Code coverage report
 .coverage
+
+# Environmental variables & secrets
+.env
