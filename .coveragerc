@@ -11,4 +11,5 @@ omit =
 
     # Do not check coverage in package `__init__` files -- those are empty
     */__init__.py
+
 cover_pylib = false
