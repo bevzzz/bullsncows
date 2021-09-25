@@ -7,8 +7,8 @@ import typing as t
 import uuid
 
 # Local libraries
-from src.server.db import model
-from src.server.app.schemas import Score
+from server.db import model
+from server.app.schemas import Score
 
 
 class MODE(int, enum.Enum):

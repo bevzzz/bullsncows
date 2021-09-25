@@ -2,9 +2,9 @@ import unittest
 import uuid
 
 # Local libraries
-from src.server.db.model import Game
-from src.server.player import MODE, Player
-from src.server.app.schemas import Score
+from server.db.model import Game
+from server.player import MODE, Player
+from server.app.schemas import Score
 
 
 class TestModeEnum(unittest.TestCase):

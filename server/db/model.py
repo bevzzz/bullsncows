@@ -2,7 +2,7 @@
 import sqlalchemy.orm as orm
 from sqlalchemy import Column, String, Integer, Boolean, ForeignKey
 
-from src.server.db.db import Base
+from server.db.db import Base
 
 
 class User(Base):

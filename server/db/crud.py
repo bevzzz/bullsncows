@@ -6,9 +6,9 @@ from pydantic import BaseModel
 
 # Local libraries
 # Schemas are Pydantic models
-from src.server.app import schemas
+from server.app import schemas
 # Models are SqlAlchemy ORM models
-from src.server.db import model
+from server.db import model
 
 
 def add_commit_refresh(db: orm.Session, data: BaseModel):

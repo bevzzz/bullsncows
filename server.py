@@ -2,8 +2,8 @@
 import uvicorn
 
 # Local libraries
-from src.server.app.api import app
+from server.app.api import app
 
 
 if __name__ == "__main__":
-    uvicorn.run(app)
+    uvicorn.run(app, port=9000)

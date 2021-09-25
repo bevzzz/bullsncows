@@ -1,5 +1,5 @@
 import unittest
-from src.server.player import MODE
+from server.player import MODE
 
 
 class TestModeEnum(unittest.TestCase):

@@ -115,6 +115,7 @@ fabric.properties
 
 # Database
 bullcow.db
+db.sqlite3
 
 # Code coverage report
 .coverage
