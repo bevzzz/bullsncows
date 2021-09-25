@@ -116,5 +116,8 @@ bullcow.db
 # Code coverage report
 .coverage
 
+# Geckodriver (fro Selenium testing)
+geckodriver.log
+
 # Environmental variables & secrets
 .env
