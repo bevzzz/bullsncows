@@ -110,6 +110,9 @@ fabric.properties
 # Byte-compiled / optimized / DLL files
 __pycache__/
 
+# CPython files
+*.pyc
+
 # Database
 bullcow.db
 
