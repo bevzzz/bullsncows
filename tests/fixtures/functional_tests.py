@@ -31,7 +31,7 @@ class NewVisitorTest(unittest.TestCase):
 
         # Boris types in 4 numbers at random: 3-1-6-8; He hits "Submit".
 
-        # On the right of the boxes he sees his own number followed by a score: 3168 : 1b 1c
+        # On the right of the start he sees his own number followed by a score: 3168 : 1b 1c
         # Not bad for a first try!
 
         # Boris makes another 3 attempts. After each one of them he can see the last number with its score
